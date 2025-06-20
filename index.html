@@ -255,10 +255,72 @@
     }
     @media (max-width: 640px) {
       .hero-section {
-        padding-top: 5rem;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
       }
+      
+      /* Stack the content vertically on mobile */
+      .hero-section > div {
+        grid-template-columns: 1fr !important;
+      }
+      
+      /* Image container adjustments */
+      .hero-section .relative {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      /* Image sizing */
+      .hero-section img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+      }
+      
+      /* Counter overlay adjustments */
+      .counter-overlay {
+        position: relative;
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        border-radius: 0.75rem;
+        margin-top: -1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+      
+      .counter-item {
+        flex: 1 1 30%;
+        min-width: 100px;
+        padding: 0.5rem;
+      }
+      
+      .counter-number {
+        color: var(--accent-color);
+        font-size: 1.5rem;
+      }
+      
+      /* Adjust the floating elements */
       .floating {
-        display: none;
+        display: none !important;
+      }
+      
+      /* Award icon positioning */
+      .absolute.-bottom-3.-left-3 {
+        bottom: 10px !important;
+        left: 10px !important;
+      }
+    }
+
+    /* Ensure the image doesn't overflow on small devices */
+    @media (max-width: 400px) {
+      .hero-section img {
+        max-height: 250px;
+      }
+      
+      .counter-item {
+        flex: 1 1 45%;
       }
     }
 
@@ -630,6 +692,7 @@
               </a>
             </div>
           </div>
+          
           
           <!-- Team Member 2 -->
           <div class="bg-card rounded-xl p-4 sm:p-6 border border-primary team-card hover:shadow-lg hover:-translate-y-2 hover:border-[#0de292] transition-all duration-300 transform" data-aos="zoom-in" data-aos-delay="100">
